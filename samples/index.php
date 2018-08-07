@@ -1,11 +1,15 @@
 <?php $autoload = require __DIR__ . '/vendor/autoload.php';
 
-Owip\Setup::Autoload($autoload, __DIR__ . DIRECTORY_SEPARATOR . "src");
+Owip\Setup::load($autoload, __DIR__ . DIRECTORY_SEPARATOR . "src");
 
-$host = new Owip\Host\WebHostBuilder()
-    ->useServer("Owip\Server\Basic")
+use Owip\Host\WebHostBuilder;
+use Owip\Server\BasicServer;
+use MyVendor\MyApp\Startup;
+
+$host = new WebHostBuilder()
+    ->useServer(BasicServer::class)
     ->useContentRoot(__DIR__)
-    ->useStartup("MyVendor\MyApp\Startup")
+    ->useStartup(Startup::class)
     ->build();
-	
+
 $host->run();

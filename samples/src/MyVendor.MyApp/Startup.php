@@ -5,7 +5,7 @@ use Owip;
 class Startup extends Application {
     
     public function configure($app) {
-        $app->useMiddleware('MyVendor\MyApp\Middleware\InternalErrorMiddleware');
+        $app->useMiddleware(MyVendor\MyApp\Middleware\InternalErrorMiddleware::class);
         
         $app->use("/", function(){
             return new TextResult("Hello World");

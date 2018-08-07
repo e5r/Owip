@@ -4,7 +4,7 @@ class Setup {
 
     const OWIP_NAMESPACE = "Owip";
 
-    public static function Autoload($autoload, $basedir) {
+    public static function load($autoload, $basedir) {
         $src = scandir($basedir);
 
         foreach ($src as $k => $v) {
