@@ -1,6 +1,8 @@
 <?php namespace MyVendor\MyApp\Middleware;
 
-class InternalErrorMiddleware {
+use Owip;
+
+class InternalErrorMiddleware extends Middleware {
     private $next;
 
     public function __construct($next) {

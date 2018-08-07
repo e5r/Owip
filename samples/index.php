@@ -1,5 +1,4 @@
-<?php
-$autoload = require __DIR__ . '/vendor/autoload.php';
+<?php $autoload = require __DIR__ . '/vendor/autoload.php';
 
 Owip\Setup::Autoload($autoload, __DIR__ . DIRECTORY_SEPARATOR . "src");
 

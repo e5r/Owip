@@ -1,8 +1,8 @@
 <?php namespace MyVendor\MyApp;
 
-use Owip\App;
+use Owip;
 
-class Startup extends Owip\App {
+class Startup extends Application {
     
     public function configure($app) {
         $app->useMiddleware('MyVendor\MyApp\Middleware\InternalErrorMiddleware');
