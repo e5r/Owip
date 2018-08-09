@@ -64,25 +64,82 @@ class WebHostAppBuilder implements IHost, IAppBuilder, IAppFunc
         // TODO: Implement handler() method.
         $this->log("handler");
 
+        //print_r($_COOKIE);
+        echo "<p>\$_COOKIE[]:</p><ul>";
+        foreach ($_COOKIE as $k => $v) {
+            echo "<li>$k -> $v</li>";
+        }
+        echo "</ul>";
+
+        //print_r($_ENV);
+        echo "<p>\$_ENV[]:</p><ul>";
+        foreach ($_ENV as $k => $v) {
+            echo "<li>$k -> $v</li>";
+        }
+        echo "</ul>";
+
+        //print_r($_FILES);
+        echo "<p>\$_FILES[]:</p><ul>";
+        foreach ($_FILES as $k => $v) {
+            echo "<li>$k -> " . join(" | ", $v) . "</li>";
+            // [name]
+            // [type]
+            // [tmp_name]
+            // [error]
+            // [size]
+        }
+        echo "</ul>";
+
+        //print_r($_GET);
+        echo "<p>\$_GET[]:</p><ul>";
+        foreach ($_GET as $k => $v) {
+            echo "<li>$k -> $v</li>";
+        }
+        echo "</ul>";
+
+        //print_r($_POST);
+        echo "<p>\$_POST[]:</p><ul>";
+        foreach ($_POST as $k => $v) {
+            echo "<li>$k -> $v</li>";
+        }
+        echo "</ul>";
+
+        //print_r($_REQUEST);
+        echo "<p>\$_REQUEST[]:</p><ul>";
+        foreach ($_REQUEST as $k => $v) {
+            echo "<li>$k -> $v</li>";
+        }
+        echo "</ul>";
+
+        //print_r($_SERVER);
+        echo "<p>\$_SERVER[]:</p><ul>";
+        foreach ($_SERVER as $k => $v) {
+            echo "<li>$k -> $v</li>";
+        }
+        echo "</ul>";
+        //print_r($_SESSION);
+
         /* Request Data
          * ----------------------
-         * owin.RequestBody
-         * owin.RequestHeaders
-         * owin.RequestMethod
-         * owin.RequestPath
-         * owin.RequestPathBase
-         * owin.RequestProtocol
-         * owin.RequestQueryString
-         * owin.RequestScheme
+         * owip.RequestBody         => $_SERVER['']
+         * --> fopen('php://input', 'r')
+         * --> file_get_contents('php://input')
+         * owip.RequestHeaders      => $_SERVER['HTTP_*']
+         * owip.RequestMethod       => $_SERVER['REQUEST_METHOD']
+         * owip.RequestPath         => $_SERVER['SCRIPT_NAME']
+         * owip.RequestPathBase     => $_SERVER['??'] => "/"
+         * owip.RequestProtocol     => $_SERVER['SERVER_PROTOCOL']
+         * owip.RequestQueryString  => $_SERVER['QUERY_STRING']
+         * owip.RequestScheme       => $_SERVER['HTTPS'] ?? 'http'
          */
 
         /* Response Data
          * ----------------------
-         * owin.ResponseBody
-         * owin.ResponseHeaders
-         * owin.ResponseStatusCode
-         * owin.ResponseReasonPhrase
-         * owin.ResponseProtocol
+         * owip.ResponseBody
+         * owip.ResponseHeaders
+         * owip.ResponseStatusCode
+         * owip.ResponseReasonPhrase
+         * owip.ResponseProtocol
          */
     }
 }
