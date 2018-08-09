@@ -3,8 +3,7 @@
 namespace Owip\Server;
 
 use Owip\IAppFunc;
-use \Owip\IAppStartup;
-use \Owip\IServer;
+use Owip\IServer;
 use Owip\PropertiesDictionary;
 
 class PhpEmbeddedServer implements IServer

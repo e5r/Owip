@@ -2,9 +2,9 @@
 
 namespace Owip\Host;
 
-use \Owip;
-use \Owip\IAppBuilder;
-use \Owip\IHostBuilder;
+use Owip;
+use Owip\IAppBuilder;
+use Owip\IHostBuilder;
 
 class WebHostBuilder implements IHostBuilder, IAppBuilder
 {

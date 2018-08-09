@@ -2,7 +2,7 @@
 
 namespace MyVendor\MyApp\Middleware;
 
-use \Owip;
+use Owip;
 
 class InternalErrorMiddleware extends Middleware
 {

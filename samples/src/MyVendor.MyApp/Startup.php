@@ -1,9 +1,9 @@
 <?php
 namespace MyVendor\MyApp;
 
-use \Owip\IAppBuilder;
-use \Owip\IAppStartup;
-use \Owip\PropertiesDictionary;
+use Owip\IAppBuilder;
+use Owip\IAppStartup;
+use Owip\PropertiesDictionary;
 
 class Startup implements IAppStartup
 {
