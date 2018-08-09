@@ -1,6 +1,6 @@
 <?php
 
-namespace \Owip\Server;
+namespace Owip\Server;
 
 use \Owip\IAppStartup;
 use \Owip\IServer;

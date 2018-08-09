@@ -1,6 +1,6 @@
 <?php
 
-namespace \MyVendor\MyApp\Middleware;
+namespace MyVendor\MyApp\Middleware;
 
 use \Owip;
 

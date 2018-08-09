@@ -1,6 +1,6 @@
 <?php
 
-namespace \Owip\Host;
+namespace Owip\Host;
 
 use \Owip;
 use \Owip\IAppBuilder;

@@ -1,6 +1,6 @@
 <?php
 
-namespace \Owip;
+namespace Owip;
 
 class PropertiesDictionary
 {
