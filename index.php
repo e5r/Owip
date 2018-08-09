@@ -1,10 +1,30 @@
 <?php $autoload = require __DIR__ . '/vendor/autoload.php';
-// Only in develop mode
-$autoload->addPsr4('Owip\\', join(DIRECTORY_SEPARATOR, array(__DIR__, "src", "Owip")));
 
-Owip\Setup::Autoload($autoload, join(DIRECTORY_SEPARATOR, array(__DIR__, "src")));
+Owip\Setup::load($autoload, join(DIRECTORY_SEPARATOR, array(__DIR__, "src")));
 
-$helper = new MyApp\Helpers\ZeroHelper("my wold");
+use Owip\Host\WebHostBuilder;
+use Owip\IAppBuilder;
+use Owip\IAppStartup;
+use Owip\PropertiesDictionary;
+use Owip\Server\PhpEmbeddedServer;
 
-echo $helper->getMessage() . "<hr />";
-$helper->print();
+class Startup implements IAppStartup
+{
+    public function configure(IAppBuilder $app, PropertiesDictionary $env)
+    {
+    }
+
+    public function handle(PropertiesDictionary $env)
+    {
+    }
+}
+
+$builder = new WebHostBuilder();
+
+$builder->useServer(PhpEmbeddedServer::class);
+$builder->useContentRoot(__DIR__);
+$builder->useStartup(Startup::class);
+
+$host = $builder->build();
+
+$host->run();

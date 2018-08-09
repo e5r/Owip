@@ -1,21 +1,16 @@
 <?php namespace MyVendor\MyApp;
 
-use Owip;
+use Owip\IAppBuilder;
+use Owip\IAppStartup;
+use Owip\PropertiesDictionary;
 
-class Startup extends Application {
-    
-    public function configure($app) {
-        $app->useMiddleware(MyVendor\MyApp\Middleware\InternalErrorMiddleware::class);
-        
-        $app->use("/", function(){
-            return new TextResult("Hello World");
-        });
+class Startup implements IAppStartup
+{
+    public function configure(IAppBuilder $app, PropertiesDictionary $env)
+    {
+    }
 
-        $app->use(function($context) {
-            if($context->request->path != "/other")
-                return;
-
-            $context->response->body("Hello " . $context->request->param("name") . "!");
-        });
+    public function handle(PropertiesDictionary $env)
+    {
     }
 }
