@@ -6,5 +6,5 @@ interface IServer
 {
     public function initializeProperties($properties);
 
-    public function start(IAppStartup $app);
+    public function start(IAppFunc $app, PropertiesDictionary $env);
 }

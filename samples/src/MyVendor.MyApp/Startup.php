@@ -1,5 +1,5 @@
 <?php
-namespace \MyVendor\MyApp;
+namespace MyVendor\MyApp;
 
 use \Owip\IAppBuilder;
 use \Owip\IAppStartup;
@@ -7,11 +7,18 @@ use \Owip\PropertiesDictionary;
 
 class Startup implements IAppStartup
 {
-    public function configure(IAppBuilder $app, PropertiesDictionary $env)
+    private function log($message)
     {
+        echo "<pre style='color:darkred'>LOG Startup: $message</pre>";
     }
 
-    public function handle(PropertiesDictionary $env)
+    public function configure(IAppBuilder $app, PropertiesDictionary $env)
     {
+        $this->log("configure");
+    }
+
+    public function handler(PropertiesDictionary $env)
+    {
+        $this->log("handler");
     }
 }

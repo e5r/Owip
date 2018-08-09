@@ -2,8 +2,10 @@
 
 namespace Owip\Server;
 
+use Owip\IAppFunc;
 use \Owip\IAppStartup;
 use \Owip\IServer;
+use Owip\PropertiesDictionary;
 
 class PhpEmbeddedServer implements IServer
 {
@@ -18,29 +20,10 @@ class PhpEmbeddedServer implements IServer
         $this->log("initializeProperties");
     }
 
-    public function start(IAppStartup $app)
+    public function start(IAppFunc $app, PropertiesDictionary $env)
     {
         // TODO: Implement start() method.
         $this->log("start");
-        /* Request Data
-         * ----------------------
-         * owin.RequestBody
-         * owin.RequestHeaders
-         * owin.RequestMethod
-         * owin.RequestPath
-         * owin.RequestPathBase
-         * owin.RequestProtocol
-         * owin.RequestQueryString
-         * owin.RequestScheme
-         */
-
-        /* Response Data
-         * ----------------------
-         * owin.ResponseBody
-         * owin.ResponseHeaders
-         * owin.ResponseStatusCode
-         * owin.ResponseReasonPhrase
-         * owin.ResponseProtocol
-         */
+        $app->handler($env);
     }
 }

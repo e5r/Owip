@@ -3,12 +3,13 @@
 namespace Owip\Host;
 
 use \Owip\IAppBuilder;
+use \Owip\IAppFunc;
 use \Owip\IAppStartup;
 use \Owip\IHost;
 use \Owip\IServer;
 use \Owip\PropertiesDictionary;
 
-class WebHostAppBuilder implements IHost, IAppBuilder
+class WebHostAppBuilder implements IHost, IAppBuilder, IAppFunc
 {
     private $properties;
     private $server;
@@ -55,6 +56,33 @@ class WebHostAppBuilder implements IHost, IAppBuilder
         $this->log("run");
         //5. O host chama o código de inicialização do servidor com o delegado do aplicativo em questão e o dicionário de propriedades.
         //   O servidor termina de se configurar, começa a aceitar solicitações e chama o delegado do aplicativo para processar essas solicitações.
-        $this->server->start($this->startup, $this->properties);
+        $this->server->start($this, $this->properties);
+    }
+
+    public function handler(PropertiesDictionary $env)
+    {
+        // TODO: Implement handler() method.
+        $this->log("handler");
+
+        /* Request Data
+         * ----------------------
+         * owin.RequestBody
+         * owin.RequestHeaders
+         * owin.RequestMethod
+         * owin.RequestPath
+         * owin.RequestPathBase
+         * owin.RequestProtocol
+         * owin.RequestQueryString
+         * owin.RequestScheme
+         */
+
+        /* Response Data
+         * ----------------------
+         * owin.ResponseBody
+         * owin.ResponseHeaders
+         * owin.ResponseStatusCode
+         * owin.ResponseReasonPhrase
+         * owin.ResponseProtocol
+         */
     }
 }
