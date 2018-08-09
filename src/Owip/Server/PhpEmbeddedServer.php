@@ -18,6 +18,20 @@ class PhpEmbeddedServer implements IServer
     {
         // TODO: Implement initializeProperties() method.
         $this->log("initializeProperties");
+
+        /* Common keys
+         * ----------------------
+         * server.RemoteIpAddress
+         * server.RemotePort
+         * server.LocalIpAddress
+         * server.LocalPort
+         * server.IsLocal
+         * server.Capabilities
+         * server.OnSendingHeaders
+         * server.OnInit
+         * server.OnDispose
+         */
+
     }
 
     public function start(IAppFunc $app, PropertiesDictionary $env)

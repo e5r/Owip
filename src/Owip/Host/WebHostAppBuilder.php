@@ -30,7 +30,13 @@ class WebHostAppBuilder implements IHost, IAppBuilder, IAppFunc
         //1. O host cria um Properties IDictionary<string, object> e preenche todos os dados ou recursos de inicialização fornecidos pelo host.
         $this->log("_construct: Criando propriedades");
         $this->properties = new PropertiesDictionary();
+
         // TODO: Incluir propriedades host
+        /* Common keys
+         * ----------------------
+         * host.TraceOutput
+         * host.Addresses
+         */
 
         //2. O host seleciona qual servidor será usado e fornece a coleção Properties para que ele possa anunciar qualquer recurso.
         $this->log("_construct: Criando servidor");
@@ -122,17 +128,6 @@ class WebHostAppBuilder implements IHost, IAppBuilder, IAppFunc
         /* Common keys
          * ----------------------
          * ssl.ClientCertificate
-         * server.RemoteIpAddress
-         * server.RemotePort
-         * server.LocalIpAddress
-         * server.LocalPort
-         * server.IsLocal
-         * host.TraceOutput
-         * host.Addresses
-         * server.Capabilities
-         * server.OnSendingHeaders
-         * server.OnInit
-         * server.OnDispose
          * websocket.*
          * sendfile.*
          * opaque.*
