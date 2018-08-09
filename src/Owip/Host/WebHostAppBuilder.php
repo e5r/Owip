@@ -119,6 +119,25 @@ class WebHostAppBuilder implements IHost, IAppBuilder, IAppFunc
         echo "</ul>";
         //print_r($_SESSION);
 
+        /* Common keys
+         * ----------------------
+         * ssl.ClientCertificate
+         * server.RemoteIpAddress
+         * server.RemotePort
+         * server.LocalIpAddress
+         * server.LocalPort
+         * server.IsLocal
+         * host.TraceOutput
+         * host.Addresses
+         * server.Capabilities
+         * server.OnSendingHeaders
+         * server.OnInit
+         * server.OnDispose
+         * websocket.*
+         * sendfile.*
+         * opaque.*
+         */
+
         /* Request Data
          * ----------------------
          * owip.RequestBody         => $_SERVER['']
