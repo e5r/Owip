@@ -1,14 +1,17 @@
-<?php namespace Owip;
+<?php
 
-class Setup {
+namespace \Owip;
 
+class Setup
+{
     const OWIP_NAMESPACE = "Owip";
 
-    public static function load($autoload, $basedir) {
+    public static function load($autoload, $basedir)
+    {
         $src = scandir($basedir);
 
         foreach ($src as $k => $v) {
-            if(!is_dir($basedir . DIRECTORY_SEPARATOR . $v) ||
+            if (!is_dir($basedir . DIRECTORY_SEPARATOR . $v) ||
                 $v == "." || $v == ".." ||
                 $v == self::OWIP_NAMESPACE)
                 continue;

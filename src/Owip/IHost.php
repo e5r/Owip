@@ -1,5 +1,6 @@
-<?php namespace Owip;
+<?php
 
+namespace \Owip;
 
 interface IHost
 {

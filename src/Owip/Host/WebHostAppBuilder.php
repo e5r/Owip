@@ -1,10 +1,12 @@
-<?php namespace Owip\Host;
+<?php
 
-use Owip\IAppBuilder;
-use Owip\IAppStartup;
-use Owip\IHost;
-use Owip\IServer;
-use Owip\PropertiesDictionary;
+namespace Owip\Host;
+
+use \Owip\IAppBuilder;
+use \Owip\IAppStartup;
+use \Owip\IHost;
+use \Owip\IServer;
+use \Owip\PropertiesDictionary;
 
 class WebHostAppBuilder implements IHost, IAppBuilder
 {

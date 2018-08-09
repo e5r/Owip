@@ -1,15 +1,20 @@
-<?php namespace MyVendor\MyApp\Middleware;
+<?php
 
-use Owip;
+namespace \MyVendor\MyApp\Middleware;
 
-class InternalErrorMiddleware extends Middleware {
+use \Owip;
+
+class InternalErrorMiddleware extends Middleware
+{
     private $next;
 
-    public function __construct($next) {
+    public function __construct($next)
+    {
         $this->next = $next;
     }
 
-    public function run($context){
+    public function run($context)
+    {
         try {
             $this->next($context);
         } catch (Exception $ex) {

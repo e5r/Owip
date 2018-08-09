@@ -1,7 +1,9 @@
-<?php namespace Owip\Server;
+<?php
 
-use Owip\IAppStartup;
-use Owip\IServer;
+namespace \Owip\Server;
+
+use \Owip\IAppStartup;
+use \Owip\IServer;
 
 class PhpEmbeddedServer implements IServer
 {
