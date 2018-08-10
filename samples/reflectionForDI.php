@@ -9,7 +9,7 @@ class A {
 }
 
 class B extends A {
-    public function methodPublic($pub){}
+    public function methodPublic($pub) : string {}
     private function methodPrivate ($pri, $pub){}
     protected function methodProtected ($pro){}
 }
